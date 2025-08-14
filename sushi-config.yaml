@@ -1,0 +1,30 @@
+# ╭─────────────────────────Commonly Used ImplementationGuide Properties───────────────────────────╮
+# │  The properties below are used to create the ImplementationGuide resource. The most commonly   │
+# │  used properties are included. For a list of all supported properties and their functions,     │
+# │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+id: kl.dk.fhir.ltt
+canonical: http://fhir.kl.dk/ltt
+name: LTT
+title: "LTT Implementation Guide"
+description: "LTT provides the specification for reporting selected data on the use of easily accessible services (lettilgængelige tilbud) offered by municipalities for children and youth experiencing mental distress (SUL §126a). Data is reported to FK Gateway"
+status: draft
+version: 0.1.0
+fhirVersion: 4.0.1
+copyrightYear: 2025+
+releaseLabel: ci-build
+publisher:
+  name: Kommunernes Landsforening
+  url: http://kl.dk
+
+dependencies:
+  hl7.fhir.dk.core:
+    uri: http://hl7.dk/fhir/core/ImplementationGuide/hl7.fhir.dk.core
+    version: 3.4.0
+  kl.dk.fhir.term:
+    uri: http://fhir.kl.dk/term/ImplementationGuide/kl.dk.fhir.term
+    version: current
+
+menu:
+  Home: index.html
+  Artifacts: artifacts.html
