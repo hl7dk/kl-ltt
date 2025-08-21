@@ -23,7 +23,7 @@ dependencies:
     version: 3.4.0
   kl.dk.fhir.term:
     uri: http://fhir.kl.dk/term/ImplementationGuide/kl.dk.fhir.term
-    version: current
+    version: 2.3.0
 
 menu:
   Home: index.html
