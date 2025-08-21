@@ -9,6 +9,16 @@ Description: "Types of encounters in LTT"
 * $LTT#404665f4-3488-4225-953e-3f1c5a061829 "Screening"
 * $LTT#b7f9217c-2315-4d6f-bba5-5117e202302c "Behandling"
 
+ValueSet: EncounterClassCodes
+Id: fkgateway-ltt-encounter-class-codes
+Title: "KontaktKlasseKoder"
+Description: "Codes to describe the mode of delivery of an encounter"
+* ^experimental = false
+* $v3-ActCode#AMB "ambulatory"
+* $v3-ActCode#HH "home health"
+* $KLCommonCodes#1b55a4b0-1156-4f58-b2df-b5c6014d9048 "Telefonisk"
+* $KLCommonCodes#124be95d-6924-4609-9d2a-e7c73ae3ab3d "Skærmbesøg"
+
 ValueSet: LTTCarePlanActivityTypes
 Id: fkgateway-ltt-care-plan-activity-types
 Title: "Lettilgængeligt Tilbud - Forløbskoder"
@@ -28,7 +38,8 @@ Id: fkgateway-ltt-type-of-delivery
 Title: "Lettilgængeligt Tilbud - Leveringstype"
 Description: "Delivery types"
 * ^experimental = false
-* include codes from system $KLCommonCodes where concept descendent-of #3f79cee2-b148-4f2c-9cbd-387820e74685
+* $KLCommonCodes#2865f123-15a7-4a36-a514-32ea37c400ca "Gruppebaseret indsats"
+* $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel indsats"
 
 ValueSet: LTTParticipantTypes
 Id: fkgateway-ltt-type-of-participants
@@ -36,7 +47,6 @@ Title: "Lettilgængeligt Tilbud - Deltagere i kontakt"
 Description: "Participants"
 * ^experimental = false
 * include codes from system $KLCommonCodes where concept descendent-of #880028ec-5f16-4242-ba53-57a902094d5b
-
 
 ValueSet: LTTTypeOfReferral
 Id: fkgateway-ltt-type-of-referral

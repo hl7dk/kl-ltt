@@ -11,15 +11,29 @@ The Encounter.type attribute is used to classify the type of activities that occ
 
 Only encounters actually carried out should be documented. Consequently, the encounter.status should be 'finished'. However, if errors have been reported use the 'entered-in-error' status as described by the FHIR documentation.
 
-Encounter.class is mandatory in FHIR. In this model only the code 'AMB' Ambulatory is allowed.
-In the Danish municipalities the value is used as: Sessions where the citizens visit municipality facilities e.g. for training or health prevention.
+Encounter.class is mandatory in FHIR. In Danish municipalities the values are used as follows.
+* 'HH' home health: Visits in citizens homes. The code is also used for services that are not strictly health related e.g. help with cleaning. This code is also used, even if the activities stretch outside the citizens residence e.g. a physiotherapist that want to see a citizen walk outside, or a social worker helping with shopping activities.
+* 'AMB' Ambulatory: Sessions where the citizens visit municipality facilities e.g. for training or health prevention.
+* 'Skærmbesøg': Encounters delivered as a screen visit.
+* 'Telefonisk': Encounters delivered using a phone.
 
 The time of the encounter is documented in Encounter.period.start, and it is mandatory.
 
-Encounter.subject relates to the subject that the encounter is about. In LTT this is always the child or youth.
-Sometimes it is actually the parents, legal guardians, etc. of the child or youth that are receiving the training or guiding. To document this, Encounter.participant can be used to tell whether it is the child/youth, who is present (maybe in companionship with the parents) or if it is just the parents, who participate in the encounter.
+Encounter.extension[basedOnCarePlan] must be populated with a reference to the care plan.
 
+Encounter.subject relates to the subject that the encounter is about. In LTT this is always the child or youth.
+Eventhough it can be the parents, legal guardians, etc. of the child or youth that are receiving the training or guiding. To document this, Encounter.participant can be used to tell whether it is the child/youth, who is present (maybe in companionship with the parents) or if it is just the parents, who participate in the encounter.
 Encounter.extension[deliveryType] is used to state, how encounters are delivered. Valid values are 'individual' and 'group based'.
+There's a difference in how the information is registered in the user interface and how it is reported to KL Gateway. The table below shows how the registrations from the user interface is represented in FHIR:
+
+{:class="grid"}
+|   User interface terms      | FHIR representation        |
+| ------------- |-------------| 
+|8742dc92-2878-4074-b128-b0384c4989c9 <br>"Gruppebaseret behandling med barn/ung" |Encounter.extension[deliveryType] = 2865f123-15a7-4a36-a514-32ea37c400ca "Gruppebaseret indsats" <br>Encounter.participant.type.coding = ca228a58-bd0e-4b0e-81ce-3866adc26535 "Barn/ung deltager"|
+|dadb1540-9542-46d1-a784-0559d94e0b9a <br>"Gruppebaseret behandling uden barn/ung" |Encounter.extension[deliveryType] = 2865f123-15a7-4a36-a514-32ea37c400ca "Gruppebaseret indsats" <br>Encounter.participant.type.coding = d3578249-10df-4051-851d-3986b1570bee "Omsorgsperson uden barn/ung"|
+|ca52f015-193e-4d31-9471-7385717dfa44 <br>"Individuel behandling med barn/ung" |Encounter.extension[deliveryType] = 8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel indsats" <br>Encounter.participant.type.coding = ca228a58-bd0e-4b0e-81ce-3866adc26535 "Barn/ung deltager"|
+|c86b5c04-7e13-488b-87fd-fb1e30309bb8 <br>"Individuel behandling uden barn/ung" |Encounter.extension[deliveryType] = 8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel indsats" <br>Encounter.participant.type.coding = d3578249-10df-4051-851d-3986b1570bee "Omsorgsperson uden barn/ung"|
+
 
 ### Conversions between Danish information model and FHIR profile
 
@@ -35,4 +49,5 @@ Nedenstående tabel definerer kort den enkelte attribut på dansk og specificere
 |kontaktdeltagere|Deltagere under kontakten|Encounter.participant|
 |kontaktstart|Kontaktens start|Encounter.period.start|
 |kontaktLeveringstype|Type, der beskriver hvordan kontaktes leveres|Encounter.extension:deliveryType|
+|kontaktBaseretPå|Den care plan, der er grunden til at denne kontakt udføres|Encounter.extension:basedOnCarePlan|
 

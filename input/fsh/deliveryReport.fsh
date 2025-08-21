@@ -17,6 +17,12 @@ Description: "Delivery report to deliver data for each child or youth."
     klgateway-ltt-citizen or
     klgateway-ltt-encounter or
     klgateway-ltt-referral
+* entry ^slicing.discriminator.type = #profile
+* entry ^slicing.discriminator.path = "resource"
+* entry ^slicing.rules = #open
+* entry contains citizen 1..1
+* entry[citizen].resource only
+    klgateway-ltt-citizen
 * entry.search 0..0
 * entry.request 0..0
 * entry.response 0..0
@@ -28,10 +34,10 @@ Description: "Rapport om Josefine."
 Usage: #example
 * type = #collection
 * timestamp = "2025-07-08T03:00:00.000+02:00"
-* entry[+].fullUrl = Canonical(Forloeb)
-* entry[=].resource = Forloeb
 * entry[+].fullUrl = Canonical(Josefine)
 * entry[=].resource = Josefine
+* entry[+].fullUrl = Canonical(Forloeb)
+* entry[=].resource = Forloeb
 * entry[+].fullUrl = Canonical(Behandlingskontakt)
 * entry[=].resource = Behandlingskontakt
 * entry[+].fullUrl = Canonical(Henvisning)

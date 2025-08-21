@@ -13,9 +13,7 @@ In addition to being structured as a report, relationships exist between the pro
 
 <img alt="ClassDiagram" src="./ClassDiagram.png" style="float:none; display:block; margin-left:auto; margin-right:auto; width:60%; height:60%;" />
 
-The Class diagram shows that CarePlan, Encounter and Referral are all associated with Citizen i.e. these profiles know which Citizen they hold information about.
-
-CarePlan is associated with the Encounters the municipality have with the citizen and Referral is associated with overall CarePlan and may also refer to the Encounter during the Referral was created.      
+The Class diagram shows that CarePlan, Encounter and Referral are all associated with Citizen i.e. these profiles know which Citizen they hold information about. The Encounter and Referral are also associated with the CarePlan.
  
 The Citizen profile inherit from dk-core, even though it is not illustrated specifically in the Class Diagram.
 
@@ -39,22 +37,19 @@ Information about the citizens that are the subjects of the report. This resourc
 This model contains information about the treatment pathway from the child’s or youths first encounter with the municipality concerning LTT.
 
 ##### Attributes
-* An identifier of the care plan.
+<!-- * An identifier of the care plan.-->
 * A start time.
 * An end time.
 * A code that decribes which care plan it is.
 * A reference to the Citizen instance that holds the child or youth's information.
-* An author, that is the responsible organization of the care plan.
 * A reasonCode that describe the focus area which is the reason for the care plan and encounters.
 * Three FHIR status attributes (status, intent, activity.detail.status).
 
 ##### Validation
-* One and only one identifier of the care plan.
+<!-- * One and only one identifier of the care plan.-->
 * One and only one code exists and should be selected from a specific ValueSet.
 * One and only one start time.
 * One and only one reference to the Citizen exists.
-* One and only one author exists, and is a syntactically valid SOR code (only code length is currently validated in the profile, but the authorization validates the actual SOR code).
-* The outcomeReference is optional. Of present, it should reference one or more Encounters.
 * The reasonCode is optional. If present, it should be selected from a specific ValueSet. It is allowed to have more than one reasonCode.
 * The FHIR status attributes are mandatory, and should be selected from the standard FHIR ValueSet.
 
@@ -69,13 +64,15 @@ Information about when a child or youth have an encounter such as screenings, pr
 * A FHIR status attribute.
 * The participant of the encounter. It can be the child or youth itself or its parents.
 * A delivery type code that express whether the encounter is delivered in a group or individually.
+* A reference to the CarePlan instance the Encounter is a part of.
 
 ##### Validation
 * One and only one encounter type exists, and should be selected from a specific ValueSet, no other codes may be reported.
-* One and only one encounter class exists, and should always be AMB.
+* One and only one encounter class exists, and should be selected from a specific ValueSet.
 * One and only one encounter start time exists.
 * One and only one reference to the Citizen exists.
-* One and only one FHIR status exists, and should be selected from the standard FHIR-ValueSet.
+* One and only one reference to the CarePlan exists.
+* One and only one FHIR status exists, and should be selected from the standard FHIR ValueSet.
 * One delivery type code, which should be selected from a specific ValueSet, may exist.
 * One participant code, which should be selected from a specific ValueSet, may exist.
 
@@ -83,12 +80,10 @@ Information about when a child or youth have an encounter such as screenings, pr
 Referrals in this context are informal recommendations to other parties, such as the child’s or youth’s general practitioner, a §126a service in another municipality, and similar instances.
 
 ##### Attributes
-* A code indicating where the citizen is being referred.
+* A code indicating which service the citizen is being referred to.
 * A start time.
 * A reference to the Citizen instance that holds the child or youth's information.
 * A reference to the CarePlan instance that this referral is a part of.
-* It may hold a reference to the Encounter at which the referral was created.
-* An contributor, which is the municipality who provided the contents of the referral.
 * Three FHIR status attributes (status, intent, activity.detail.status).
 
 ##### Validation
@@ -96,10 +91,6 @@ Referrals in this context are informal recommendations to other parties, such as
 * One and only one start time.
 * One and only one reference to the Citizen exists.
 * One and only one reference to the CarePlan exists.
-* One and only one contributor exists, and is a syntactically valid SOR code (only code length is currently validated in the profile, but the authorization validates the actual SOR code).
-* The reference to an Encounter is optional. <!--TODO skal den være 0..0, 0..1 eller 1..1? -->
-<!--* The reasonCode is optional. If present, it should be selected from a specific ValueSet. It is allowed to have more than one reasonCode.-->
-<!--TODO skal reasonCode anvendes? -->
 * The FHIR status attributes are mandatory, and should be selected from the standard FHIR ValueSet. activity.detail.status must be set to 'completed'.
 
 ## Dependencies

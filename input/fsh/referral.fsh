@@ -6,11 +6,11 @@ Description: "Referral of the child or youth to other services."
 * identifier 0..0
 * instantiatesCanonical 0..0
 * instantiatesUri 0..0
-* basedOn 0..0
+* basedOn 1..1
+* basedOn only Reference(KLGatewayLTTCarePlan)
+* basedOn ^short = "[DK] forløbsreference"
 * replaces 0..0
-* partOf 1..1
-* partOf only Reference(KLGatewayLTTCarePlan)
-* partOf ^short = "[DK] forløbsreference"
+* partOf 0..0
 * status ^short = "[DK] henvisningsstatus"
 * intent ^short = "[DK] henvisningshensigt"
 * intent = #plan
@@ -19,23 +19,14 @@ Description: "Referral of the child or youth to other services."
 * description 0..0
 * subject only Reference(KLGatewayLTTCitizen)
 * subject ^short = "[DK] henvisningssubjekt"
-* encounter 0..1 //TODO laves en henvisning altid i forbindelse med en Kontakt, engang imellem eller aldrig? Jeg har sendt mail til Morten, KL
-* encounter only Reference(KLGatewayLTTEncounter)
-* encounter ^short = "[DK] henvisningskontakt"
+* encounter 0..0
 * period 1..1
   * start 1..1
   * start ^short = "[DK] henvisningstidspunkt"
   * end 0..0
 * created 0..0
 * author 0..0
-* contributor 1..1
-* contributor only Reference(DkCoreOrganization)
-  * ^short = "[DK] henvisningsbidragsyder"
-  * reference 0..0
-  * type 0..0
-  * identifier 1..1
-  * identifier only dk-core-sor-identifier
-  * display 0..0
+* contributor 0..0
 * careTeam 0..0
 * addresses 0..0
 * supportingInfo 0..0
@@ -56,7 +47,7 @@ Description: "Referral of the child or youth to other services."
         * version 0..0
         * userSelected 0..0
       * text 0..0
-    * reasonCode 0..0 //TODO ønskes tema at indgå for henvisning? Hvis der er flere temaer på et forløb, er det vel ikke sikkert at det er begge der ligger til grund for en henvisning, men måske bare et af dem?
+    * reasonCode 0..0
     * reasonReference 0..0
     * goal 0..0
     * status ^short = "[DK] henvisningsAktivitetsstatus"
@@ -76,14 +67,10 @@ Instance: Henvisning
 InstanceOf: KLGatewayLTTReferral
 Description: "Henvisning for barnet Josefine"
 Usage: #example
-* partOf = Reference(Forloeb)
+* basedOn = Reference(Forloeb)
 * status = #completed
 * intent = #plan
 * subject = Reference(Josefine)
-* encounter = Reference(Behandlingskontakt)
 * period.start = "2025-07-07T13:28:17+02:00"
-* contributor.identifier.use = #official
-* contributor.identifier.value =  "451000016003"
-* contributor.identifier.system = "urn:oid:1.2.208.176.1.1"
 * activity.detail.code = $LTT#59721d6a-71c7-4cae-954c-5997cbebd387 "Andet tilbud i hjemkommune"
 * activity.detail.status = #completed

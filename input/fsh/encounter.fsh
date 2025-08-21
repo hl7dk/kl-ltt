@@ -4,18 +4,20 @@ Id: klgateway-ltt-encounter
 Title: "KLGatewayLTTEncounter"
 Description: "Encounter between a child or youth and the LTT"
 * obeys klgateway-ltt-encounter-participants-and-deliveryType
-* extension contains DeliveryType named deliveryType 0..1
+* extension contains 
+  DeliveryType named deliveryType 0..1 and
+  BasedOnCarePlan named basedOnCarePlan 1..1
 * extension[deliveryType].valueCodeableConcept.coding from LTTDeliveryTypes (required)
 * extension[deliveryType] ^short = "[DK] kontaktLeveringstype"
+* extension[basedOnCarePlan] ^short = "[DK] kontaktBaseretPå"
 * identifier 0..0
 * status ^short = "[DK] kontaktstatus"
 * statusHistory 0..0
-* class
+* class from EncounterClassCodes
   * ^short = "[DK] kontaktklasse"
   * system 1..1
-  * system = $v3-ActCode
   * version 0..0
-  * code = #AMB
+  * code 1..1
   * userSelected 0..0
 * classHistory 0..0
 * type 1..1
@@ -52,6 +54,7 @@ Description: "Encounter between a child or youth and the LTT"
 * serviceProvider 0..0
 * partOf 0..0
 
+
 Invariant: klgateway-ltt-encounter-participants-and-deliveryType
 Description: "If the encounter is of type 'Behandling', then the encounter must have participant and deliveryType."
 Severity: #error
@@ -63,6 +66,7 @@ InstanceOf: KLGatewayLTTEncounter
 Description: "Josefines seneste behandlingskontakt."
 Usage: #example
 * extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel indsats"
+* extension[basedOnCarePlan].valueReference = Reference(Forloeb)
 * status = #finished
 * class = $v3-ActCode#AMB
 * type = $LTT#b7f9217c-2315-4d6f-bba5-5117e202302c "Behandling"
