@@ -4,6 +4,7 @@ Title: "Lettilgængeligt Tilbud - Kontakttyper"
 Description: "Types of encounters in LTT"
 * ^experimental = false
 * $LTT#afd9445a-7ca5-42f8-8011-c3802db3f30b "Afsluttende samtale"
+* $LTT#3b1d8884-5a1d-43cf-aabb-8c1035148c46 "Afslutning"
 * $LTT#ac1057da-a510-4bab-a2b1-d96efa464bdc "Henvendelse"
 * $LTT#e2eee938-a58c-42d0-a514-dc91779b1243 "Forsamtale"
 * $LTT#404665f4-3488-4225-953e-3f1c5a061829 "Screening"
