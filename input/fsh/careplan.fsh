@@ -97,7 +97,7 @@ Usage: #example
 * status = #active
 * intent = #plan
 * subject = Reference(Josefine)
-* period.start = "2025-05-14T08:17:00+02:00"
+* period.start = "2025-05-14T08:17:00Z"
 * activity.detail.code = $KLCommonCodes#01302bcb-c7f3-42c4-8ded-68e33da064eb "Lettilgængelige tilbud til børn og unge i psykisk mistrivsel"
 * activity.detail.reasonCode[+] = $LTT#bf4df811-805a-4309-8394-7d9ea31b8af7 "Krop og mad"
 * activity.detail.reasonCode[+] = $LTT#5cea8eb2-5374-45f7-a985-cef1f577f0a1 "Selvskade"

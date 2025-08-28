@@ -71,6 +71,6 @@ Usage: #example
 * status = #completed
 * intent = #plan
 * subject = Reference(Josefine)
-* period.start = "2025-07-07T13:28:17+02:00"
+* period.start = "2025-07-07T14:28:17Z"
 * activity.detail.code = $LTT#59721d6a-71c7-4cae-954c-5997cbebd387 "Andet tilbud i hjemkommune"
 * activity.detail.status = #completed

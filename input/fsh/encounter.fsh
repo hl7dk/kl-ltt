@@ -68,8 +68,8 @@ Usage: #example
 * extension[deliveryType].valueCodeableConcept = $KLCommonCodes#8d12d74c-17da-47a7-a4fe-e69dbaec0a8c "Individuel indsats"
 * extension[basedOnCarePlan].valueReference = Reference(Forloeb)
 * status = #finished
-* class = $v3-ActCode#AMB
+* class = $v3-ActCode#AMB "ambulatory"
 * type = $LTT#b7f9217c-2315-4d6f-bba5-5117e202302c "Behandling"
 * subject = Reference(Josefine)
-* period.start = "2025-07-07T13:28:17+02:00"
+* period.start = "2025-07-07T13:28:17Z"
 * participant.type.coding = $KLCommonCodes#ca228a58-bd0e-4b0e-81ce-3866adc26535 "Barn/ung deltager"

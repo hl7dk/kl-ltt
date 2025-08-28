@@ -33,7 +33,7 @@ InstanceOf: KLGatewayLTTDeliveryReport
 Description: "Rapport om Josefine."
 Usage: #example
 * type = #collection
-* timestamp = "2025-07-08T03:00:00.000+02:00"
+* timestamp = "2025-07-08T03:00:00Z"
 * entry[+].fullUrl = Canonical(Josefine)
 * entry[=].resource = Josefine
 * entry[+].fullUrl = Canonical(Forloeb)
