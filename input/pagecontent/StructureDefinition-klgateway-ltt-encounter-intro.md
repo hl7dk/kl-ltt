@@ -8,6 +8,7 @@ The Encounter.type attribute is used to classify the type of activities that occ
 * Screening
 * Behandling
 * Afsluttende samtale
+* Afslutning
 
 Only encounters actually carried out should be documented. Consequently, the encounter.status should be 'finished'. However, if errors have been reported use the 'entered-in-error' status as described by the FHIR documentation.
 
