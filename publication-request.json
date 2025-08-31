@@ -1,7 +1,7 @@
 {
     "package-id" : "kl.dk.fhir.ltt",
     "version" : "1.0.0",
-    "path" : "http://fhir.kl.dk/ltt/2.1.1",
+    "path" : "http://fhir.kl.dk/ltt/1.0.0",
     "mode" : "milestone",
     "status" : "release",
     "sequence" : "Releases",
