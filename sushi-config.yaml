@@ -8,8 +8,8 @@ canonical: http://fhir.kl.dk/ltt
 name: LTT
 title: "LTT Implementation Guide"
 description: "LTT provides the specification for reporting selected data on the use of easily accessible services (lettilgængelige tilbud) offered by municipalities for children and youth experiencing mental distress (SUL §126a). Data is reported to FK Gateway"
-status: draft
-version: 0.1.0
+status: active
+version: 1.0.0
 fhirVersion: 4.0.1
 copyrightYear: 2025+
 releaseLabel: ci-build
