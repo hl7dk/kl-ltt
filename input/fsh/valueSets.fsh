@@ -10,16 +10,6 @@ Description: "Types of encounters in LTT"
 * $LTT#404665f4-3488-4225-953e-3f1c5a061829 "Screening"
 * $LTT#b7f9217c-2315-4d6f-bba5-5117e202302c "Behandling"
 
-ValueSet: EncounterClassCodes
-Id: fkgateway-ltt-encounter-class-codes
-Title: "KontaktKlasseKoder"
-Description: "Codes to describe the mode of delivery of an encounter"
-* ^experimental = false
-* $v3-ActCode#AMB "ambulatory"
-* $v3-ActCode#HH "home health"
-* $KLCommonCodes#1b55a4b0-1156-4f58-b2df-b5c6014d9048 "Telefonisk"
-* $KLCommonCodes#124be95d-6924-4609-9d2a-e7c73ae3ab3d "Skærmbesøg"
-
 ValueSet: LTTCarePlanActivityTypes
 Id: fkgateway-ltt-care-plan-activity-types
 Title: "Lettilgængeligt Tilbud - Forløbskoder"

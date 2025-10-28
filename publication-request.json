@@ -1,15 +1,10 @@
 {
     "package-id" : "kl.dk.fhir.ltt",
-    "version" : "1.0.0",
-    "path" : "http://fhir.kl.dk/ltt/1.0.0",
+    "version" : "1.0.1",
+    "path" : "http://fhir.kl.dk/ltt/1.0.1",
     "mode" : "milestone",
     "status" : "release",
     "sequence" : "Releases",
     "descmd": "@release-notes.md",
-    "desc" : "Initial release of KL ltt",
-    "title" : "KLltt",
-    "first" : true,
-    "ci-build" : "https://build.fhir.org/ig/hl7dk/kl-ltt",
-    "category" : "Clinical Registries",
-    "introduction" : "This IG includes reporting model for children and youth mental health interventions used in Danish Municipalities. They are defined by KL/Local Government Denmark."
+    "desc" : "Patch release that corrects minor errors in KL ltt"
   }

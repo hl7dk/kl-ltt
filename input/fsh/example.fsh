@@ -44,7 +44,7 @@ Description: "Kontakt, hvor Josefines mor henvender sig til Holbæk kommune."
 Usage: #inline
 * extension[basedOnCarePlan].valueReference = Reference(857ea1d6-c212-4c89-a2f4-9e2bfa8c288d)
 * status = #finished
-* class = $KLCommonCodes#1b55a4b0-1156-4f58-b2df-b5c6014d9048 "Telefonisk"
+* class = $v3-ActCode#AMB "ambulatory"
 * type = $LTT#ac1057da-a510-4bab-a2b1-d96efa464bdc "Henvendelse"
 * subject = Reference(407ceb16-acb4-43ea-a4f5-d415c17faded)
 * period.start = "2025-05-14T09:12:05Z"
@@ -261,7 +261,7 @@ Description: "Afslutning på behandlingsforløbet for Josefine."
 Usage: #inline
 * extension[basedOnCarePlan].valueReference = Reference(857ea1d6-c212-4c89-a2f4-9e2bfa8c288d-v4)
 * status = #finished
-* class = $KLCommonCodes#1b55a4b0-1156-4f58-b2df-b5c6014d9048 "Telefonisk"
+* class = $v3-ActCode#AMB "ambulatory"
 * type = $LTT#3b1d8884-5a1d-43cf-aabb-8c1035148c46 "Afslutning"
 * subject = Reference(407ceb16-acb4-43ea-a4f5-d415c17faded)
 * period.start = "2025-11-08T15:36:22Z"
