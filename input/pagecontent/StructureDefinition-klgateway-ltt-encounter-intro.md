@@ -12,11 +12,8 @@ The Encounter.type attribute is used to classify the type of activities that occ
 
 Only encounters actually carried out should be documented. Consequently, the encounter.status should be 'finished'. However, if errors have been reported use the 'entered-in-error' status as described by the FHIR documentation.
 
-Encounter.class is mandatory in FHIR. In Danish municipalities the values are used as follows.
-* 'HH' home health: Visits in citizens homes. The code is also used for services that are not strictly health related e.g. help with cleaning. This code is also used, even if the activities stretch outside the citizens residence e.g. a physiotherapist that want to see a citizen walk outside, or a social worker helping with shopping activities.
-* 'AMB' Ambulatory: Sessions where the citizens visit municipality facilities e.g. for training or health prevention.
-* 'Skærmbesøg': Encounters delivered as a screen visit.
-* 'Telefonisk': Encounters delivered using a phone.
+Encounter.class is mandatory in FHIR. In this implementation guide, always use 'AMB' Ambulatory.
+
 
 The time of the encounter is documented in Encounter.period.start, and it is mandatory.
 

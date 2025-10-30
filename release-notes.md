@@ -1,1 +1,1 @@
-Initial version of KL ltt.
+Patch version to the inital release of KL ltt. Encounter.class have been narrowed down to AMB. InclementalDelivery, which is only used inside FKGateway is added.

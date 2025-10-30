@@ -13,7 +13,7 @@ Description: "Encounter between a child or youth and the LTT"
 * identifier 0..0
 * status ^short = "[DK] kontaktstatus"
 * statusHistory 0..0
-* class from EncounterClassCodes
+* class = $v3-ActCode#AMB
   * ^short = "[DK] kontaktklasse"
   * system 1..1
   * version 0..0

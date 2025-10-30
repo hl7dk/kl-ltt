@@ -9,7 +9,7 @@ name: LTT
 title: "LTT Implementation Guide"
 description: "LTT provides the specification for reporting selected data on the use of easily accessible services (lettilgængelige tilbud) offered by municipalities for children and youth experiencing mental distress (SUL §126a). Data is reported to FK Gateway"
 status: active
-version: 1.0.0
+version: 1.0.1
 fhirVersion: 4.0.1
 copyrightYear: 2025+
 releaseLabel: ci-build
